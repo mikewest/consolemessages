@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang='en'>
+  <head>
+    <meta charset='utf-8'>
+    <title>"This is an error message"</title>
+    <link href='http://fonts.googleapis.com/css?family=Open+Sans:400,700|Inconsolata:400,700' rel='stylesheet' type='text/css'>
+    <style>
+      html, body {
+        margin: 0;
+        padding: 0;
+      }
+      body {
+        margin: 0 auto;
+        max-width: 700px;
+      }
+      h1 {
+        border-top: 1px solid #DDD;
+        font: 700 35px/1.4 'Open Sans';
+        padding-top: 0.25em;
+        margin-top: 0.25em;
+      }
+      h2 {
+        font: 700 25px/1.4 'Open Sans';
+      }
+      var {
+        font-family: Inconsolata;
+        font-variant: italic;
+      }
+      var::before {
+        content: "[";
+      }
+      var::after {
+        content: "]";
+      }
+      p, li {
+        font: 20px/1.2 'Open Sans';
+      }
+      code {
+        font-family: Inconsolata;
+        background: rgba(255, 251, 204, 0.7);
+      }
+
+      header {
+        padding: 0.25em 0.5em;
+        margin-top: 0.5em;
+        opacity: 0.5;
+        transition: opacity 1s;
+      }
+      header:hover {
+        opacity: 1;
+      }
+      header a {
+        color: #666;
+        font: 700 18px/1.6 'Open Sans';
+        text-decoration: none;
+      }
+      header i {
+        background: url(https://developer.chrome.com/static/images/chrome-logo.png);
+        display: inline-block;
+        height: 32px;
+        width: 32px;
+        text-indent: -999px;
+
+      }
+    </style>
+
+  </head>
+  <body>
+    <header>
+      <a href="/" rel="home"><i>Chrome</i> Console Messages</a>
+    </header>
+    <h1>The 'reflected-xss' Content Security Policy directive has the invalid value "<var>value</var>". Valid values are "allow", "filter", and "block".</h1>
+    <p>When processing the HTTP headers for this document, Chrome saw a <code>Content-Security-Policy</code> header that specified a value for the <code>reflected-xss</code> directive which couldn't be parsed. The directive accepts three valid values:</p>
+    <ul>
+      <li><code>allow</code> turns off the browser's active XSS protections</li>
+      <li><code>filter</code> filters out potential XSS injections the browser detects</li>
+      <li><code>block</code> blocks the entire page from loading if a potential XSS injection is detected</li>
+    </ul>
+    <p>You can correct this error by specifying one of these valid options in the page's headers. For example, you might send the following header: <code>Content-Security-Policy: reflected-xss block;</code>.</p>
+    <h2>Resources</h2>
+    <ul>
+      <li>Specification: <a href='http://www.w3.org/TR/CSP11/#reflected-xss'>Content Security Policy 1.1: &sect;4.12.4 - reflected-xss</a></li>
+      <li><a href="http://www.html5rocks.com/en/tutorials/security/content-security-policy/">"An Introduction to Content Security Policy"</a> on HTML5Rocks</li>
+      <li><a href="http://stackoverflow.com/questions/tagged/content-security-policy">Questions tagged "Content-Security-Policy"</a> on StackOverflow</li>
+    </ul>
+  </body>
+</html>
